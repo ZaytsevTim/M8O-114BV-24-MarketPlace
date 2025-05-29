@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment  #  Имя вашего Deployment
+  labels:
+    app: my-app  # Метка для Service и других ресурсов
+spec:
+  replicas: 2  #  Количество Pod'ов (реплик) вашего приложения
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container  # Имя вашего контейнера
+        image: yourusername/flask-app:latest  # Замените на имя вашего Docker-образа (например, my-app:latest)
+        ports:
+        - containerPort: 80  #  Порт, на котором работает ваше приложение внутри контейнера
+        #  Если у вас есть переменные окружения:
+        #  env:
+        #  - name: DATABASE_URL
+        #    value: "mysql://user:password@host:port/database"

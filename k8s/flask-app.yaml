@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-app
+  template:
+    metadata:
+      labels:
+        app: flask-app
+    spec:
+      containers:
+      - name: flask-app
+        image: hoodrich134/flask-app:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: USER
+          value: postgres.xgzwzinrqxltjddcwrkl
+        - name: PASSWORD
+          value: "Dualshock11@" #  Внимание: Хранить пароли напрямую небезопасно!
+        - name: HOST
+          value: aws-0-eu-north-1.pooler.supabase.com
+        - name: PORT
+          value: "6543"       # Порт должен быть строкой!
+        - name: DBNAME
+          value: postgres
+        # Если вы хотите использовать один DATABASE_URL вместо отдельных переменных:
+        # - name: DATABASE_URL
+        #   value: "postgresql://postgres.xgzwzinrqxltjddcwrkl:Dualshock11@@aws-0-eu-north-1.pooler.supabase.com:6543/postgres"
