@@ -13,14 +13,14 @@
 
 ### <h1 align="center"> Структура Проекта 🗺️: </h1>
 marketplace/
-├── k8s/                    # Конфигурации Kubernetes
-├── static/                 # Статические файлы (CSS, изображения)
-├── templates/              # HTML-шаблоны
-├── .env                    # Переменные окружения
-├── app.py                  # Основное Flask-приложение
-├── Dockerfile              # Инструкции для сборки Docker-образа
-├── README.md               # Документация (этот файл)
-└── requirements.txt        # Зависимости Python
+##├── k8s/                    # Конфигурации Kubernetes
+##├── static/                 # Статические файлы (CSS, изображения)
+##├── templates/              # HTML-шаблоны
+##├── .env                    # Переменные окружения
+##├── app.py                  # Основное Flask-приложение
+##├── Dockerfile              # Инструкции для сборки Docker-образа
+##├── README.md               # Документация (этот файл)
+#└── requirements.txt        # Зависимости Python
 
 ## <h1 align="center">Реализованная функциональность ⚙️ </h1>
 - Главная страница (
